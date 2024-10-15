@@ -1,0 +1,13 @@
+package tanishiking:ferris-says@1.0.0;
+
+interface ferris-says {
+    say: func(content: string, width: u32) -> string;
+}
+
+world ferrisify {
+    export ferris-says;
+}
+
+world ferrisify-cli {
+    import ferris-says;
+}

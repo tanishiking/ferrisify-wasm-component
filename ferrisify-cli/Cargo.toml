@@ -1,0 +1,23 @@
+[package]
+name = "ferrisify-cli"
+version = "1.0.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.89"
+bitflags = "2.6.0"
+clap = { version = "4.5.20", features = ["derive"] }
+wit-bindgen-rt = { version = "0.34.0", features = ["bitflags"] }
+
+[profile.release]
+codegen-units = 1
+opt-level = "s"
+debug = false
+strip = true
+lto = true
+
+[package.metadata.component]
+package = "tanishiking:ferrisify-cli"
+target = "tanishiking:ferris-says/ferrisify-cli@1.0.0"
+
+[package.metadata.component.dependencies]
